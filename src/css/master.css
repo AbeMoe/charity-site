@@ -1,0 +1,63 @@
+  @import url(//db.onlinewebfonts.com/c/ac0ce686a32cba4f395e268b405d5974?family=BaskervilleMTW01-SmBdIt);
+
+  @font-face {font-family: "BaskervilleMTW01-SmBdIt"; src: url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.eot"); src: url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.woff") format("woff"), url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ac0ce686a32cba4f395e268b405d5974.svg#BaskervilleMTW01-SmBdIt") format("svg"); }
+
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .accent-text {
+    color: #CC48CE;
+    text-shadow: #ffffff 3px 3px 0px, rgb(0 0 0 / 20%) 6px 6px 0px;
+  }
+
+  .basker-text { 
+    font-style: italic;
+    font-family: 'BaskervilleMTW01-SmBdIt';
+  }
+
+  
+#app {
+  background: url('../assets/microphone_background.webp') no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: black !important;
+}
+
+.banner-gradient {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,.5), rgba(0,0,0,0)) !important;
+}
+
+
+.router-button {
+  color: #ffdd00 !important;
+  opacity: 1 !important;
+  -webkit-transition: color .3s ease-out !important;
+  -moz-transition: color .3s ease-out !important;
+  -o-transition: color .3s ease-out !important;
+  transition: color .3s ease-out !important;
+}
+
+.router-button:hover {
+  color: white !important;
+  cursor: pointer !important;
+}
+
+
+.text-transform{
+  text-transform: none;
+  background-color:#CC48CE !important;
+  font-size: large  !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.text-link {
+  color: #CC48CE !important;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,104 @@
+<template>
+  <v-container>
+    <v-row class="text-center">
+      <v-col cols="12">
+        <h2
+        class="white--text basker-text"
+        > Do you have what it takes to be the next Battle Royale Champion? </h2>
+        <h1      class="accent-text basker-text">
+          Sunday, April 16, 2023
+        </h1>
+        <h1  class="white--text">
+          Club Café
+          </h1>
+        <p class="white--text basker-text">Club Cafe: 209 Columbus Avenue, Boston, MA. 02116</p>
+        <p  class="white--text basker-text">Charity Beneficiary: Shriners Hospital, Transportation Fund. For more information on the beneficiary please click here.</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-spacer></v-spacer>
+      <v-col cols="4">
+        <v-row>
+          <v-col cols="6">
+            <p class="white--text basker-text">
+            Doors: 1:00 PM
+            </p>
+          </v-col>
+          <v-col>
+            <p class="white--text basker-text">
+            Show: 2:00 PM
+            </p>
+          </v-col>
+        </v-row>
+  
+        <p class="white--text basker-text mt-0 pb-5">
+          VIP Brunch: 12:00 PM
+        </p>
+        <div class="text-spacer"></div>
+        <h2 class="white--text basker-text mb-0 pb-0"> Tickets: </h2>
+        <ul class="white--text basker-text mb-0 pb-0 ml-2">
+          General Admission:
+
+          <li class="white--text basker-text ma-0 pa-0 ml-6">
+            $25 (Online)
+          </li>
+          <li class="white--text basker-text ma-0 pa-0 ml-6">
+            $30 (Door)
+          </li>
+        </ul>
+        <ul class="white--text basker-text mb-0 pb-0 ml-2">
+          VIP Brunch:
+          <li class="white--text  basker-text ma-0 pa-0 ml-6">
+            $100 (Online only)
+          </li>
+        </ul>
+      </v-col>
+      <v-col cols="2"> 
+        <h2 class="basker-text white--text center-text"> 
+          Get Tickets For this Event on 
+        </h2>
+        <v-btn :href="EBLink" target="_blank" class="text-transform basker-text mt-6"><span style="color: #ffdd00;">EventBrite</span></v-btn>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col :cols="getImgSize">
+        <v-img
+          :src="require('../assets/2022-winners-circle.webp')"
+          style="overflow: visible"  
+        >
+        </v-img>
+      </v-col>
+      <v-spacer> </v-spacer>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+  export default {
+    name: 'HelloWorld',
+    data: () => ({
+      EBLink: "https://www.eventbrite.com/e/battle-royale-broadways-best-tickets-429337930307"
+    }),
+    computed: {
+      getImgSize () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 12
+          case 'sm': return 12
+          case 'md': return 4
+          case 'lg': return 4
+          case 'xl': return 4
+        }
+      },
+    }
+  }
+</script>
+
+<style scoped>
+
+
+p {
+  overflow-wrap: normal;
+}
+
+
+
+</style>
