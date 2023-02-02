@@ -59,7 +59,7 @@
         <router-view
         style="width: 100vw margin: 0;"
         />
- 
+    <div class="footer"> </div>
       </v-main>
   </v-app>
 </template>

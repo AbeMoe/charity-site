@@ -1,18 +1,14 @@
 <template>
-  <v-form ref="form">
     <v-container>
       <v-row>
         <v-spacer></v-spacer>
 
         <v-col>
-          <h2 class="basker-text white--text ">Contact Us </h2>
+          <h2 class="basker-text text-center white--text ">Contact Us </h2>
         </v-col>
-
-        <v-spacer></v-spacer>
-
-      
       </v-row>
 
+        <v-spacer></v-spacer>
       <v-row>
         <v-col cols="6" class="name-field">
           <v-text-field
@@ -76,13 +72,14 @@
           <v-btn  
           @click="sendMessage"
           :disabled="buttonEnabled"
-          >
-          Submit</v-btn>
+          class="text-transform basker-text mt-6">
+              <span style="color: #ffdd00;">Submit</span>
+          </v-btn>
         </v-col>
       </v-row>
+    </v-form>
     </v-container>
 
-  </v-form>
 </template>
 
 <script>
@@ -96,6 +93,8 @@ import store from '../store/index'
       email: "",
       firstname: "",
       lastname: "",
+      loading: false,
+      finished: false,
 
       nameRules: [
         v => !!v || 'Name is required',
@@ -116,9 +115,13 @@ import store from '../store/index'
 
     },
     methods: {
-      
+       reset(event) {
+        this.finished = false
+       },
       async sendMessage(event) {
         if(this.$refs.form.validate()) { 
+          this.finished = false
+          this.loading=true
           var body = {
             message: this.message,
             email: this.email,
@@ -126,6 +129,8 @@ import store from '../store/index'
             lastname: this.lastname,
           }
           const res =  await axios.post(store.state.formURL, body)
+          this.loading = false
+          this.finished = true
           console.log(res)
         }
       }
