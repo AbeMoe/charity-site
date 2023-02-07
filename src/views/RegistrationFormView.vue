@@ -1,36 +1,20 @@
 <template>
-  <v-form ref="form">
     <v-container>
       <v-row>
         <v-spacer></v-spacer>
 
         <v-col>
-          <h2 class="basker-text white--text ">Contact Us </h2>
+          <h2 class="basker-text text-center white--text ">Contact Us </h2>
         </v-col>
+      </v-row>
 
         <v-spacer></v-spacer>
-      </v-row>
       <v-row>
-        <RegistrationTextField
-          label="First Name"
-          :rules="nameRules"
-          v-model="firstname"
-          cols="6">
-        </RegistrationTextField>
-        <RegistrationTextField
-          label="Last Name"
-          :rules="nameRules"
-          v-model="lastname"
-          cols="6">
-        </RegistrationTextField>
 
-      </v-row>
-      <v-row>
         <RegistrationTextField
-          label="Email"
-          :rules="nameRules"
-          v-model="email"
-          cols="12">
+        label="example Label"
+        :rules="nameRules"
+        :hint="firstname">
         </RegistrationTextField>
         <v-col cols="12">
           <v-textarea
@@ -39,7 +23,21 @@
             v-model="message"
             :counter="500"
             :rules="messageRules"
-            label="Message"
+            label="Name(s)"
+            hint="Name(s) you wish to be announced on stage as."
+            required
+          >
+          </v-textarea>
+        </v-col>
+        <v-col cols="12">
+          <v-textarea
+            dark
+            class="name-field basker-text"
+            v-model="message"
+            :counter="500"
+            :rules="messageRules"
+            label="Charity you are competing for"
+            hint="Must be a verified 501c3."
             required
           >
           </v-textarea>
@@ -53,29 +51,33 @@
           <v-btn  
           @click="sendMessage"
           :disabled="buttonEnabled"
-          >
-          Submit</v-btn>
+          class="text-transform basker-text mt-6">
+              <span style="color: #ffdd00;">Submit</span>
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
 
-  </v-form>
 </template>
 
 <script>
 const axios = require('axios').default;
 import RegistrationTextField from '@/components/RegistrationTextField.vue'
-
 import store from '../store/index'
+
   export default {
     components: {
       RegistrationTextField
     },
     data: () => ({
+
       message: "",
       email: "",
       firstname: "",
       lastname: "",
+      loading: false,
+      finished: false,
+
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 30 || 'Name must be less than 20 characters',
@@ -92,10 +94,14 @@ import store from '../store/index'
       
     }),
     computed: {
+
     },
     methods: {
-      
+       reset(event) {
+        this.finished = false
+       },
       async sendMessage(event) {
+        print("haiiiii")
         if(this.$refs.form.validate()) { 
           this.finished = false
           this.loading=true
@@ -116,4 +122,7 @@ import store from '../store/index'
 </script>
 
 <style scoped>
+
+
+
 </style>
