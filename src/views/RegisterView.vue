@@ -36,10 +36,7 @@
     <v-row>
       <v-spacer></v-spacer>
       <v-col cols="4">
-        <v-btn class="text-transform basker-text mt-6">
-          <span class="highlight">Register</span>
-
-        </v-btn>
+        <ColorButton url="/Home" text="Register"></ColorButton>
       </v-col>
       <v-spacer></v-spacer>
 
@@ -52,11 +49,13 @@
 </style>
 
 <script>
-
+import ColorButton from '@/components/ColorButton'
   export default {
-
     data: () => ({
     }),
+    components: {
+      ColorButton,
+    },
 
   };
 </script>

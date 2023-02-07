@@ -40,8 +40,10 @@
             <v-col
             cols="4"
             >
+            <v-spacer></v-spacer>
             </v-col>
-            <v-col>
+            <v-col cols="1">
+              <ColorButton :url="link" text="Get Tickets"> </ColorButton>
             </v-col>
           </v-row>
         </v-container>
@@ -65,16 +67,22 @@
 </template>
 
 <script>
+import ColorButton from '@/components/ColorButton'
+import store from "@/store/index";
 
 export default {
   name: 'App',
-
+  components: {
+    ColorButton
+  },
   data: () => ({
+    link: store.state.EBLink,
     buttons: [
       { "text" : "home", "routePath" : "Home"} , 
       {"text" : "contact", "routePath" : "Contact"}, 
       {"text" : "register", "routePath" : "Register"}, 
-      {"text" : "sponsors", "routePath" : "Sponsors"} ]
+      {"text" : "sponsors", "routePath" : "Sponsors"},
+      ]
   }),
 };
 </script>

@@ -31,7 +31,7 @@
 
 <script>
 const axios = require("axios").default;
-import store from "../store/index";
+import store from "@/store/index";
 
 export default {
   name: "Sponsors",

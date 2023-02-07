@@ -57,7 +57,7 @@
         <h2 class="basker-text white--text center-text"> 
           Get Tickets For this Event on 
         </h2>
-        <v-btn :href="EBLink" target="_blank" class="text-transform basker-text mt-6"><span style="color: #ffdd00;">EventBrite</span></v-btn>
+         <ColorButton :url="link" text="EventBrite"></ColorButton>
       </v-col>
       <v-spacer></v-spacer>
       <v-col :cols="getImgSize">
@@ -73,10 +73,13 @@
 </template>
 
 <script>
+import ColorButton from '@/components/ColorButton'
+import store from "@/store/index";
+
   export default {
     name: 'HelloWorld',
     data: () => ({
-      EBLink: "https://www.eventbrite.com/e/battle-royale-broadways-best-tickets-429337930307"
+      link: store.state.EBLink
     }),
     computed: {
       getImgSize () {
@@ -88,7 +91,10 @@
           case 'xl': return 4
         }
       },
-    }
+    },
+    components: {
+      ColorButton,
+    },
   }
 </script>
 
