@@ -37,13 +37,12 @@
                 >{{ button.text }}
               </v-btn>
             </v-col>
-            <v-col
-            cols="4"
-            >
-            <v-spacer></v-spacer>
-            </v-col>
-            <v-col cols="1">
+                        <v-spacer></v-spacer>
+            <v-col cols="2">
               <ColorButton :url="link" text="Get Tickets"> </ColorButton>
+            </v-col>
+            <v-col cols="2">
+              <ColorButton :url="link" text="Donate"> </ColorButton>
             </v-col>
           </v-row>
         </v-container>
