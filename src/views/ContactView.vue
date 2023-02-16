@@ -11,39 +11,37 @@
         <v-spacer></v-spacer>
       </v-row>
       <v-row>
-        <RegistrationTextField
+        <TextField
           label="First Name"
           :rules="nameRules"
           v-model="firstname"
           cols="6">
-        </RegistrationTextField>
-        <RegistrationTextField
+        </TextField>
+        <TextField
           label="Last Name"
           :rules="nameRules"
           v-model="lastname"
           cols="6">
-        </RegistrationTextField>
+        </TextField>
 
       </v-row>
       <v-row>
-        <RegistrationTextField
+        <TextField
           label="Email"
-          :rules="nameRules"
+          :rules="emailRules"
           v-model="email"
           cols="12">
-        </RegistrationTextField>
-        <v-col cols="12">
-          <v-textarea
-            dark
-            class="name-field basker-text"
-            v-model="message"
-            :counter="500"
-            :rules="messageRules"
-            label="Message"
-            required
-          >
-          </v-textarea>
-        </v-col>
+        </TextField>
+      </v-row>
+      <v-row>
+        <TextField
+          label="Message"
+          :rules="messageRules"
+          v-model="message"
+          :area="true"
+          count="500"
+          cols="12">
+        </TextField>
       </v-row>
       <v-row>
         <v-col cols="10">
@@ -64,12 +62,12 @@
 
 <script>
 const axios = require('axios').default;
-import RegistrationTextField from '@/components/RegistrationTextField.vue'
+import TextField from '@/components/TextField.vue'
 
 import store from '../store/index'
   export default {
     components: {
-      RegistrationTextField
+      TextField
     },
     data: () => ({
       message: "",
