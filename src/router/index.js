@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ContactView from '../views/ContactView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import SponsorsView from '../views/SponsorsView.vue'
+import HomeView from '@/views/HomeView.vue'
+import ContactView from '@/views/ContactView.vue'
+import RulesView from '@/views/RulesView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import SponsorsView from '@/views/SponsorsView.vue'
 
 
 Vue.use(VueRouter)
@@ -22,6 +23,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+  {
+    path: '/rules',
+    name: 'rules',
+    component: RulesView
   },
   {
     path: '/register',

@@ -79,7 +79,7 @@ export default {
     buttons: [
       { "text" : "home", "routePath" : "Home"} , 
       {"text" : "contact", "routePath" : "Contact"}, 
-      {"text" : "register", "routePath" : "Register"}, 
+      {"text" : "register", "routePath" : "Rules"}, 
       {"text" : "sponsors", "routePath" : "Sponsors"},
       ]
   }),
