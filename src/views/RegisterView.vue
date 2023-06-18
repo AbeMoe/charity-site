@@ -15,6 +15,7 @@
         <TextField
         label="email"
         :rules="emailRules"
+        v-model="email"
         hint="Your contact email">
         </TextField>
       </v-row>
@@ -22,6 +23,7 @@
         <TextField
         :area="true"
         label="About You"
+        v-model="message"
         count=500
         :rules="messageRules"
         hint="This is a short bio for the digital program">
@@ -29,7 +31,8 @@
       </v-row>
       <v-row>
         <TextField
-        :rules="messageRules"
+        :rules="nameRules"
+        v-model="name"
         label="Name(s)"
         hint="Name(s) you wish to be announced on stage as.">
         </TextField>
@@ -38,6 +41,7 @@
         <TextField
         required
         :rules="messageRules"
+        v-model="charity"
         label="Charity you are competing for"
         hint="Must be a verified 501c3">
         </TextField>
@@ -45,7 +49,8 @@
       <v-row>
         <TextField
         required
-        :rules="messageRules"
+        :rules="websiteRules"
+        v-model="website"
         label="Charity website"
         hint="A link to your charitys website">
         </TextField>
@@ -53,8 +58,8 @@
         <v-col cols="12">
           <v-file-input dark 
           label="Head shot"
-          @change="previewImage"
           v-model="image"
+          @change="previewImage"
           ></v-file-input>
         </v-col>
         <v-col cols="12"> 
@@ -92,18 +97,23 @@ import store from '../store/index'
       image: null,
       message: "",
       email: "",
-      firstname: "",
-      lastname: "",
+      name: "",
+      charity: "",
+      website: "",
       loading: false,
       finished: false,
 
       nameRules: [
         v => !!v || 'Name is required',
-        v => v.length <= 30 || 'Name must be less than 20 characters',
+        v => v.length <= 150 || 'Name must be less than 150 characters',
       ],
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],
+      websiteRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+\..+/.test(v) || 'website must be a proper domain',
       ],
       messageRules: [
         v => !!v || 'Message is required',
@@ -129,10 +139,17 @@ import store from '../store/index'
           var body = {
             message: this.message,
             email: this.email,
-            firstname: this.firstname,
-            lastname: this.lastname,
+            name: this.name,
+            charity: this.charity,
+            website: this.website,
+            image: this.image,
           }
-          const res =  await axios.post(store.state.contestantURL, body)
+          console.log(body)
+          const res =  await axios.post(store.state.contestantURL, body, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
           this.loading = false
           this.finished = true
           console.log(res)
