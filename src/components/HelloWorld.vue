@@ -6,7 +6,7 @@
         class="white--text basker-text"
         > Do you have what it takes to be the next Battle Royale Champion? </h2>
         <h1      class="accent-text basker-text">
-          Sunday, April 16, 2023
+            {{eventDate}}
         </h1>
         <h1  class="white--text">
           Club Café
@@ -17,16 +17,16 @@
     </v-row>
     <v-row>
       <v-spacer></v-spacer>
-      <v-col cols="4">
+      <v-col :cols="getImgSize">
         <v-row>
           <v-col cols="6">
             <p class="white--text basker-text">
-            Doors: 1:00 PM
+            Doors: {{doorsTime}}
             </p>
           </v-col>
           <v-col>
             <p class="white--text basker-text">
-            Show: 2:00 PM
+            Show: {{eventTime}}
             </p>
           </v-col>
         </v-row>
@@ -53,7 +53,7 @@
           </li>
         </ul>
       </v-col>
-      <v-col cols="2"> 
+      <v-col :cols="getImgSize" class="text-center"> 
         <h2 class="basker-text white--text center-text"> 
           Get Tickets For this Event on 
         </h2>
@@ -79,7 +79,10 @@ import store from "@/store/index";
   export default {
     name: 'HelloWorld',
     data: () => ({
-      link: store.state.EBLink
+      link: store.state.EBLink,
+      eventDate: store.state.eventDate,
+      doorsTime: store.state.doorsTime,
+      eventTime: store.state.eventTime
     }),
     computed: {
       getImgSize () {

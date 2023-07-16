@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <p>Event Date: 16 April 2023</p>
-    <p>Event Time: Doors: 1:00 PM Show: 2:00 PM [Ideally, contestants should arrive by 11:30 AM to participate in the VIP Brunch Meet and Greet Brunch is included]</p>
+    <p>Event Date: {{eventDate}}</p>
+    <p>Event Time: Doors: {{doorsTime}} Show: {{eventTime}} [Ideally, contestants should arrive by 11:30 AM to participate in the VIP Brunch Meet and Greet Brunch is included]</p>
     <p> Registration Deadline: 1 March 2023 </p>
     <ul ><h3 class="underlined">Entry Fee:</h3>
       <li> Solo $35.00 </li>
@@ -31,7 +31,6 @@
       <li>Overall concept: The judges are looking for your ability to convey the message set forth by your song. Does your choice of costuming fit your message? 10 pts per judge </li>
       <li>Did you adhere to the allotted 5-minute time frame? (this will be a yes or no question. If the answer is "NO",  10 pts total will be deducted.) (no added point value) </li>
     </ol>
-    <p> <span class="underlined">Optional Mini Challenge:</span> contestant will have their own fundraising page on the website the contestant who raises the most money in the time frame allotted will receive 10 additional points. </p>
     <h1 class="highlight"> The Entry Fee is <span class="blink">Non-refundable</span> </h1>
     <v-row>
       <v-spacer></v-spacer>
@@ -49,9 +48,13 @@
 </style>
 
 <script>
+import store from "@/store/index";
 import ColorButton from '@/components/ColorButton'
   export default {
     data: () => ({
+        eventDate: store.state.eventDate,
+        eventTime: store.state.eventTime,
+        doorsTime: store.state.doorsTime
     }),
     components: {
       ColorButton,
