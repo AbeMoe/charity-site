@@ -11,6 +11,8 @@ export default new Vuex.Store({
     EBLink: "https://www.eventbrite.com/e/battle-royale-broadways-best-tickets-429337930307",
     bucket: "battleroyaleboston", //s3 bucket (largely unused)
     sponsorsPrefix: "sponsors",
+    doorFee: "TBD",
+    onlineFee: "TBD",
     region: "us-east-1", //AWS region
     eventDate: "6, April 2024", //Date event takes place
     doorsTime: "4:00 PM", //Time doors open

@@ -5,7 +5,7 @@
         <h2
         class="white--text basker-text"
         > Do you have what it takes to be the next Battle Royale Champion? </h2>
-        <h1      class="accent-text basker-text">
+        <h1      class="white--text">
             {{eventDate}}
         </h1>
         <h1  class="white--text">
@@ -31,27 +31,20 @@
           </v-col>
         </v-row>
   
-        <p class="white--text basker-text mt-0 pb-5">
-          VIP Brunch: 12:00 PM
-        </p>
+
         <div class="text-spacer"></div>
         <h2 class="white--text basker-text mb-0 pb-0"> Tickets: </h2>
         <ul class="white--text basker-text mb-0 pb-0 ml-2">
           General Admission:
 
           <li class="white--text basker-text ma-0 pa-0 ml-6">
-            $25 (Online)
+            {{onlineFee}} (Online)
           </li>
           <li class="white--text basker-text ma-0 pa-0 ml-6">
-            $30 (Door)
+            {{doorFee}} (Door)
           </li>
         </ul>
-        <ul class="white--text basker-text mb-0 pb-0 ml-2">
-          VIP Brunch:
-          <li class="white--text  basker-text ma-0 pa-0 ml-6">
-            $100 (Online only)
-          </li>
-        </ul>
+
       </v-col>
       <v-col :cols="getImgSize" class="text-center"> 
         <h2 class="basker-text white--text center-text"> 
@@ -82,7 +75,10 @@ import store from "@/store/index";
       link: store.state.EBLink,
       eventDate: store.state.eventDate,
       doorsTime: store.state.doorsTime,
-      eventTime: store.state.eventTime
+      eventTime: store.state.eventTime,
+      doorFee: store.state.doorFee,
+      onlineFee: store.state.onlineFee
+
     }),
     computed: {
       getImgSize () {

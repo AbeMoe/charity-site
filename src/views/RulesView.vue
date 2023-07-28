@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <p>Event Date: {{eventDate}}</p>
-    <p>Event Time: Doors: {{doorsTime}} Show: {{eventTime}} [Ideally, contestants should arrive by 11:30 AM to participate in the VIP Brunch Meet and Greet Brunch is included]</p>
+    <p>Event Time: Doors: {{doorsTime}} Show: {{eventTime}}</p>
     <p> Registration Deadline: 1 March 2023 </p>
     <ul ><h3 class="underlined">Entry Fee:</h3>
       <li> Solo $35.00 </li>
@@ -17,7 +17,7 @@
       <li> Contestants must be registered by 11:59 PM on 1 March 2023; we will not accept any registrations after this time. </li>
       <li> The entry fee of $35.00 solo or $50.00 duet will need to be paid before 11:59 PM on 15 March 2023. </li>
       <li> All contestants must select a charity they are competing for when registering.</li>
-      <li> All contestants arrive at Club Cafe by 11:30 AM and be present for the VIP Brunch (Contestant brunch is included). </li>
+      <li> All contestants arrive at Club Cafe by 11:30 AM </li>
     </ol>
     <ol class="pt-7"> <h3 class="underlined"> Judging </h3> <p> Contestants will be judged on the following: </p>
       <li>Stage presence (Do you command the stage and you have the audience's attention) 10pts per judge</li>
