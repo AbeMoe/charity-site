@@ -1,23 +1,22 @@
 <template>
   <v-container>
     <p>Event Date: {{eventDate}}</p>
-    <p>Event Time: Doors: {{doorsTime}} Show: {{eventTime}}</p>
-    <p> Registration Deadline: 1 March 2023 </p>
-    <ul ><h3 class="underlined">Entry Fee:</h3>
-      <li> Solo $35.00 </li>
-      <li> Duet $50.00 </li>
-    </ul>
-    <p> All Entry Fees must be received by 15 March 2023 </p>
-    <p> Prize: The winner gets a crown, sash, Title "Battle Royale Champion", and chooses which charity $500 will be donated to.</p>
-    <p> The remainder of the proceeds will be donated to the Shriners Hospital, Transportation Fund.</p>
-    <p> Registration: egistration will begin on 1 January 2023 and run until 1 March 2023.</p>
+    <p>Event Time: Doors: {{doorsTime}} Show: {{eventTime}} Ideally, contestants should arrive by {{arrivalTime}}</p>
+    <p> Registration Deadline: {{registrationEnd}} </p>
+    <h3>Entry Fee:   Solo  Duet   {{entryFee}}</h3>
+    <p> All Entry Fees must be received by {{entryFeePaid}} </p>
+    <h1 class="highlight"> Prize: <span class="blink"> $1000 </span>  Prize to the winner</h1>
+    <p> The remainder of the proceeds will be donated to {{charityBenefactor}}</p>
+    <p> Registration: registration will begin on <b>{{registrationStart}}</b> and run until <b>{{registrationEnd}}</b>.</p>
     <h2 class="underlined"> Only 10 Spots are Available</h2>
     <ol class="pt-7" ><h3 class="underlined">Rules</h3>
       <li> Each constant must perform a Broadway song no longer than 5 minutes in length. Performances can be "live" vocals or lip-sync. If your music goes over the 5-minute allotted time, the DJ will cut your music, and 10 points will be deducted from your score.</li>
-      <li> Contestants must be registered by 11:59 PM on 1 March 2023; we will not accept any registrations after this time. </li>
-      <li> The entry fee of $35.00 solo or $50.00 duet will need to be paid before 11:59 PM on 15 March 2023. </li>
+      <li> Contestants must be registered <b>by 11:59 PM {{registrationEnd}} </b>; we will not accept any registrations after this time. </li>
+      <li> The entry fee of {{entryFee}} will need to be paid before <b>11:59 PM on {{entryFeePaid}}.</b> </li>
       <li> All contestants must select a charity they are competing for when registering.</li>
-      <li> All contestants arrive at Club Cafe by 11:30 AM </li>
+      <li> <b>All contestants arrive at Club Cafe by {{arrivalTime}} </b></li>
+      <li> Contestants are required to advertise this event. Each contestant will receive a custom code to track ticket sales, and whoever sells the most tickets will receive an award for their efforts.</li>
+      <li> Music <b>MUST</b> be sent to battleroyaleboston@gmail.com by <b> {{musicDeadLine}} </b> </li>
     </ol>
     <ol class="pt-7"> <h3 class="underlined"> Judging </h3> <p> Contestants will be judged on the following: </p>
       <li>Stage presence (Do you command the stage and you have the audience's attention) 10pts per judge</li>
@@ -26,7 +25,7 @@
           <li> Vocals: How is your tone, and pitch? Were you off-key?</li>
           <li> Lip Sync: Do your lips match the words for the track you are performing to?</li>
       </ul>
-      <li>The entry fee of $35.00 solo or $50.00 duet will need to be paid before 11:59 PM on 15 March 2023.</li>
+      <li>The entry fee of {{entryFee}} duet will need to be paid before 11:59 PM on {{entryFeePaid}}.</li>
       <li>All contestants must select a charity they are competing for when registering.</li>
       <li>Overall concept: The judges are looking for your ability to convey the message set forth by your song. Does your choice of costuming fit your message? 10 pts per judge </li>
       <li>Did you adhere to the allotted 5-minute time frame? (this will be a yes or no question. If the answer is "NO",  10 pts total will be deducted.) (no added point value) </li>
@@ -35,7 +34,7 @@
     <v-row>
       <v-spacer></v-spacer>
       <v-col cols="4">
-        <ColorButton to="/register" text="Register"></ColorButton>
+        <ColorButton :url="registrationLink" text="Register"></ColorButton>
       </v-col>
       <v-spacer></v-spacer>
 
@@ -52,9 +51,17 @@ import store from "@/store/index";
 import ColorButton from '@/components/ColorButton'
   export default {
     data: () => ({
+        registrationLink: store.state.registrationLink,
+        registrationStart: store.state.registrationStart,
+        registrationEnd: store.state.registrationEnd,
+        entryFeePaid: store.state.entryFeePaid,
         eventDate: store.state.eventDate,
         eventTime: store.state.eventTime,
-        doorsTime: store.state.doorsTime
+        doorsTime: store.state.doorsTime,
+        entryFee: store.state.entryFee,
+        charityBenefactor: store.state.charityBenefactor,
+        arrivalTime: store.state.arrivalTime,
+        musicDeadLine: store.state.musicDeadLine,
     }),
     components: {
       ColorButton,
@@ -64,9 +71,8 @@ import ColorButton from '@/components/ColorButton'
 </script>
 
 <style scoped>
-p, ul, li, h2, ol, h1 {
+p, ul, li, h2, ol, h1, h3 {
   color: white;
-  font-style: italic;
   font-family: 'BaskervilleMTW01-SmBdIt';
 }
 

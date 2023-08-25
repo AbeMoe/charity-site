@@ -50,7 +50,7 @@
         <h2 class="basker-text white--text center-text"> 
           Get Tickets For this Event on 
         </h2>
-         <ColorButton :url="link" text="EventBrite"></ColorButton>
+         <ColorButton :url="ticketLink" text="EventBrite"></ColorButton>
       </v-col>
       <v-spacer></v-spacer>
       <v-col :cols="getImgSize">
@@ -72,7 +72,7 @@ import store from "@/store/index";
   export default {
     name: 'HelloWorld',
     data: () => ({
-      link: store.state.EBLink,
+      ticketLink: store.state.ticketLink,
       eventDate: store.state.eventDate,
       doorsTime: store.state.doorsTime,
       eventTime: store.state.eventTime,

@@ -29,10 +29,10 @@
         <v-spacer/>
 
         <v-col cols="2" offset="auto" align="right">
-          <ColorButton :url="link" text="Get Tickets"> </ColorButton>
+          <ColorButton :url="ticketLink" text="Get Tickets"> </ColorButton>
         </v-col>
         <v-col cols="2" align="right">
-          <ColorButton :url="link" text="Donate"> </ColorButton>
+          <ColorButton :url="donateLink" text="Donate"> </ColorButton>
         </v-col>
       </v-row>
     </v-app-bar>
@@ -46,11 +46,17 @@
     <v-navigation-drawer
           v-model="drawer"
           location="bottom"
-          style="background: transparent;"
+          style="background: transparent; overflow: auto; overflow-y: auto;"
       >
           <v-list v-show="drawer">
-            <v-list-item  prepend-icon="mdi-email" v-for="button in buttons" :key=button :title="button.text"  :value="button.routePath">
+            <v-list-item  v-for="button in buttons" :key=button :title="button.text"  :value="button.routePath">
               <ColorButton :url="'#/' + button.routePath" :text="button.text"/>
+            </v-list-item>
+            <v-list-item>
+               <ColorButton :url="ticketLink" text="Get Tickets"> </ColorButton>
+            </v-list-item>
+            <v-list-item>
+               <ColorButton :url="donateLink" text="Donate"> </ColorButton>
             </v-list-item>
           </v-list>
       </v-navigation-drawer>
@@ -84,7 +90,8 @@ export default {
     ColorButton
   },
   data: () => ({
-    link: store.state.EBLink,
+    ticketLink: store.state.ticketLink,
+    donateLink: store.state.donateLink,
     buttons: [
       { "text" : "home", "routePath" : "Home"} , 
       {"text" : "contact", "routePath" : "Contact"}, 
@@ -94,14 +101,18 @@ export default {
     drawer: false,
     isNotMobile: true
   }),
+  beforeCreate() {
+    handleResize()
+  },
   mounted() {
-  window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize);
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
     handleResize() {
+      console.log("This is size", window.innerWidth)
       // Update the computed property when the window is resized
       this.isNotMobile = window.innerWidth >= 768; // Adjust the breakpoint as needed
     }

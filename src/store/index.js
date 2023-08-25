@@ -8,15 +8,25 @@ export default new Vuex.Store({
     formURL: "https://wujy775ovp7wum6cqainbhh5ly0sbjnl.lambda-url.us-east-1.on.aws/",
     contestantURL: "https://aji5nf5yzj3waugvxo2pvviphe0jsskv.lambda-url.us-east-1.on.aws/",
     s3ContentsUrl: "https://kvbgno6xuecq2fufxsrua37iju0mbcsi.lambda-url.us-east-1.on.aws/",
-    EBLink: "https://www.eventbrite.com/e/battle-royale-broadways-best-tickets-429337930307",
-    bucket: "battleroyaleboston", //s3 bucket (largely unused)
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSf7qbg4jrs62ny3dmR4svEPLSFW5upQIi4Vt21loylZFcrSkQ/viewform",
+    ticketLink: "https://www.eventbrite.com/e/battle-royale-boston-2024-tickets-663779691927?aff=erelexpmlt",
+    donateLink: "https://square.link/u/QPk7wiDX",
+    bucket: "battleroyaleboston", //s3 bucket (Mostly for storing sponsor photos)
     sponsorsPrefix: "sponsors",
-    doorFee: "TBD",
-    onlineFee: "TBD",
+    doorFee: "$40",
+    onlineFee: "$30",
+    vipFee: "$75 (Online Only)",
+    entryFee: "$75",
     region: "us-east-1", //AWS region
     eventDate: "6, April 2024", //Date event takes place
     doorsTime: "4:00 PM", //Time doors open
-    eventTime: "5:00 PM" //Event start time
+    eventTime: "5:00 PM", //Event start time
+    arrivalTime: "3:00 PM",
+    registrationStart: "1 January 2024",
+    registrationEnd: "29 February 2024",
+    entryFeePaid: "15 March 2024",
+    musicDeadLine: "23 March 2024",
+    charityBenefactor: "the Veteran's Appreciation and Support Foundation",
 
   },
   getters: {
