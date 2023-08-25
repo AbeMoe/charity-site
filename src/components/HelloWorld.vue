@@ -12,7 +12,7 @@
           Club Café
           </h1>
         <p class="white--text basker-text">Club Cafe: 209 Columbus Avenue, Boston, MA. 02116</p>
-        <p  class="white--text basker-text">Charity Beneficiary: Shriners Hospital, Transportation Fund. For more information on the beneficiary please click here.</p>
+        <p  class="white--text basker-text">Charity Beneficiary: {{charityBenefactor}}</p>
       </v-col>
     </v-row>
     <v-row>
@@ -73,6 +73,7 @@ import store from "@/store/index";
     name: 'HelloWorld',
     data: () => ({
       ticketLink: store.state.ticketLink,
+      charityBenefactor: store.state.charityBenefactor,
       eventDate: store.state.eventDate,
       doorsTime: store.state.doorsTime,
       eventTime: store.state.eventTime,

@@ -26,7 +26,7 @@ export default new Vuex.Store({
     registrationEnd: "29 February 2024",
     entryFeePaid: "15 March 2024",
     musicDeadLine: "23 March 2024",
-    charityBenefactor: "the Veteran's Appreciation and Support Foundation",
+    charityBenefactor: "The Veteran's Appreciation and Support Foundation",
 
   },
   getters: {
