@@ -10,10 +10,9 @@
     <p> Registration: registration will begin on <b>{{registrationStart}}</b> and run until <b>{{registrationEnd}}</b>.</p>
     <h2 class="underlined"> Only 10 Spots are Available</h2>
     <ol class="pt-7" ><h3 class="underlined">Rules</h3>
-      <li> Each constant must perform a Broadway song no longer than 5 minutes in length. Performances can be "live" vocals or lip-sync. If your music goes over the 5-minute allotted time, the DJ will cut your music, and 10 points will be deducted from your score.</li>
+      <li> Each constant must perform a Disney song no longer than 5 minutes in length. Performances can be "live" vocals or lip-sync. If your music goes over the 5-minute allotted time, the DJ will cut your music, and 10 points will be deducted from your score.</li>
       <li> Contestants must be registered <b>by 11:59 PM {{registrationEnd}} </b>; we will not accept any registrations after this time. </li>
       <li> The entry fee of {{entryFee}} will need to be paid before <b>11:59 PM on {{entryFeePaid}}.</b> </li>
-      <li> All contestants must select a charity they are competing for when registering.</li>
       <li> <b>All contestants arrive at Club Cafe by {{arrivalTime}} </b></li>
       <li> Contestants are required to advertise this event. Each contestant will receive a custom code to track ticket sales, and whoever sells the most tickets will receive an award for their efforts.</li>
       <li> Music <b>MUST</b> be sent to battleroyaleboston@gmail.com by <b> {{musicDeadLine}} </b> </li>
@@ -26,7 +25,6 @@
           <li> Lip Sync: Do your lips match the words for the track you are performing to?</li>
       </ul>
       <li>The entry fee of {{entryFee}} duet will need to be paid before 11:59 PM on {{entryFeePaid}}.</li>
-      <li>All contestants must select a charity they are competing for when registering.</li>
       <li>Overall concept: The judges are looking for your ability to convey the message set forth by your song. Does your choice of costuming fit your message? 10 pts per judge </li>
       <li>Did you adhere to the allotted 5-minute time frame? (this will be a yes or no question. If the answer is "NO",  10 pts total will be deducted.) (no added point value) </li>
     </ol>

@@ -43,6 +43,9 @@
           <li class="white--text basker-text ma-0 pa-0 ml-6">
             {{doorFee}} (Door)
           </li>
+          <li class="white--text basker-text ma-0 pa-0 ml-6">
+           VIP {{vipFee}} 
+          </li>
         </ul>
 
       </v-col>
@@ -78,7 +81,8 @@ import store from "@/store/index";
       doorsTime: store.state.doorsTime,
       eventTime: store.state.eventTime,
       doorFee: store.state.doorFee,
-      onlineFee: store.state.onlineFee
+      onlineFee: store.state.onlineFee,
+      vipFee: store.state.vipFee,
 
     }),
     computed: {
