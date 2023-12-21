@@ -29,7 +29,7 @@
         <v-spacer/>
 
         <v-col cols="2" offset="auto" align="right">
-          <ColorButton :url="ticketLink" text="Get Tickets"> </ColorButton>
+          <ColorButton :url="ticketLink" text="Tickets"> </ColorButton>
         </v-col>
         <v-col cols="2" align="right">
           <ColorButton :url="donateLink" text="Donate"> </ColorButton>
@@ -53,7 +53,7 @@
               <ColorButton :url="'#/' + button.routePath" :text="button.text"/>
             </v-list-item>
             <v-list-item>
-               <ColorButton :url="ticketLink" text="Get Tickets"> </ColorButton>
+               <ColorButton :url="ticketLink" text="Tickets"> </ColorButton>
             </v-list-item>
             <v-list-item>
                <ColorButton :url="donateLink" text="Donate"> </ColorButton>
