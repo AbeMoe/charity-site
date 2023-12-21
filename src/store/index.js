@@ -14,8 +14,8 @@ export default new Vuex.Store({
     bucket: "battleroyaleboston", //s3 bucket (Mostly for storing sponsor photos)
     sponsorsPrefix: "sponsors",
     doorFee: "$40",
-    onlineFee: "$30",
-    vipFee: "$75 (Online Only)",
+    onlineFee: "$35",
+    vipFee: "$80 (Online Only)",
     entryFee: "$75",
     region: "us-east-1", //AWS region
     eventDate: "6, April 2024", //Date event takes place
