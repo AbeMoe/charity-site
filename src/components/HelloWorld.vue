@@ -51,14 +51,14 @@
       </v-col>
       <v-col :cols="getImgSize" class="text-center"> 
         <h2 class="basker-text white--text center-text"> 
-          Get Tickets For this Event on 
+          Get Tickets For this Event 
         </h2>
-         <ColorButton :url="ticketLink" text="EventBrite"></ColorButton>
+         <ColorButton :url="ticketLink" text="Tickets"></ColorButton>
       </v-col>
       <v-spacer></v-spacer>
       <v-col :cols="getImgSize">
         <v-img
-          :src="require('../assets/2022-winners-circle.webp')"
+          :src="require('../assets/2023-Batt.jpg')"
           style="overflow: visible"  
         >
         </v-img>

@@ -17,8 +17,7 @@
     
       <v-row style="width: 100vw;" class="justify-start">
         <v-col 
-        v-for="button in buttons" :key=button 
-        cols="1">
+        v-for="button in buttons" :key=button >
           <v-btn
               plain
               :to= button.routePath
@@ -28,10 +27,10 @@
         </v-col>
         <v-spacer/>
 
-        <v-col cols="2" offset="auto" align="right">
+        <v-col cols="2" offset="auto">
           <ColorButton :url="ticketLink" text="Tickets"> </ColorButton>
         </v-col>
-        <v-col cols="2" align="right">
+        <v-col cols="2" class="pr-3">
           <ColorButton :url="donateLink" text="Donate"> </ColorButton>
         </v-col>
       </v-row>
@@ -99,10 +98,10 @@ export default {
       {"text" : "sponsors", "routePath" : "Sponsors"},
       ],
     drawer: false,
-    isNotMobile: true
+    isNotMobile: false
   }),
-  beforeCreate() {
-    handleResize()
+  beforeMount() {
+    this.handleResize()
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
