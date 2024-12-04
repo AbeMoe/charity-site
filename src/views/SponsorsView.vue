@@ -13,7 +13,7 @@
         <h3 class="white--text basker-text">
           Charity Sponsors Battle Royale could not be made possible without the
           continuous support from our sponsors. If you would like to become a
-          sponsor, please <a class="text-link">click here</a>.
+          sponsor, please <a :href="this.sponsorLink" class="text-link" target="_blank">click here</a>.
         </h3>
       </v-col>
       <v-spacer></v-spacer>
@@ -39,6 +39,8 @@ export default {
   data: () => ({
     buttons: ["Home", "Tickets", "Contact", "More"],
     photos: [],
+    sponsorLink: store.state.sponsorLink
+
   }),
   async mounted() {
     var body = {
