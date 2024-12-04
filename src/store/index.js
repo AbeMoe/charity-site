@@ -17,15 +17,16 @@ export default new Vuex.Store({
     onlineFee: "$35",
     vipFee: "$80 (Online Only)",
     entryFee: "$75",
+    prizeAmount: "$1000",
     region: "us-east-1", //AWS region
-    eventDate: "6, April 2024", //Date event takes place
+    eventDate: "5, April 2024", //Date event takes place
     doorsTime: "4:00 PM", //Time doors open
     eventTime: "5:00 PM", //Event start time
     arrivalTime: "3:00 PM",
-    registrationStart: "1 January 2024",
-    registrationEnd: "29 February 2024",
-    entryFeePaid: "15 March 2024",
-    musicDeadLine: "23 March 2024",
+    registrationStart: "1 January 2025",
+    registrationEnd: "29 February 2025",
+    entryFeePaid: "1 March 2025",
+    musicDeadLine: "23 March 2025",
     charityBenefactor: "The Veteran's Appreciation and Support Foundation",
 
   },

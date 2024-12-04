@@ -58,7 +58,7 @@
       <v-spacer></v-spacer>
       <v-col :cols="getImgSize">
         <v-img
-          :src="require('../assets/2023-Batt.jpg')"
+          :src="require('../assets/2024-Batt.jpg')"
           style="overflow: visible"  
         >
         </v-img>

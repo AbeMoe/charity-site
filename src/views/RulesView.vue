@@ -5,7 +5,7 @@
     <p> Registration Deadline: {{registrationEnd}} </p>
     <h3>Entry Fee:   Solo  Duet   {{entryFee}}</h3>
     <p> All Entry Fees must be received by {{entryFeePaid}} </p>
-    <h1 class="highlight"> Prize: <span class="blink"> $1000 </span>  Prize to the winner</h1>
+    <h1 class="highlight"> Prize: <span class="blink"> {{prizeAmount}} </span>  Prize to the winner</h1>
     <p> The remainder of the proceeds will be donated to {{charityBenefactor}}</p>
     <p> Registration: registration will begin on <b>{{registrationStart}}</b> and run until <b>{{registrationEnd}}</b>.</p>
     <h2 class="underlined"> Only 10 Spots are Available</h2>
@@ -60,6 +60,7 @@ import ColorButton from '@/components/ColorButton'
         charityBenefactor: store.state.charityBenefactor,
         arrivalTime: store.state.arrivalTime,
         musicDeadLine: store.state.musicDeadLine,
+        prizeAmount: store.state.prizeAmount,
     }),
     components: {
       ColorButton,
