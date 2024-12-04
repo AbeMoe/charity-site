@@ -53,7 +53,9 @@
         <h2 class="basker-text white--text center-text"> 
           Get Tickets For this Event 
         </h2>
-         <ColorButton :url="ticketLink" text="Tickets"></ColorButton>
+         <ColorButton :url="generalTicketLink" text="General"></ColorButton>
+         <ColorButton :url="generalTicketLink" text="VIP"></ColorButton>
+
       </v-col>
       <v-spacer></v-spacer>
       <v-col :cols="getImgSize">
@@ -83,6 +85,8 @@ import store from "@/store/index";
       doorFee: store.state.doorFee,
       onlineFee: store.state.onlineFee,
       vipFee: store.state.vipFee,
+      vipTicketLink: store.state.vipTicketLink,
+      generalTicketLink: store.state.generalTicketLink
 
     }),
     computed: {

@@ -8,8 +8,9 @@ export default new Vuex.Store({
     formURL: "https://wujy775ovp7wum6cqainbhh5ly0sbjnl.lambda-url.us-east-1.on.aws/",
     contestantURL: "https://aji5nf5yzj3waugvxo2pvviphe0jsskv.lambda-url.us-east-1.on.aws/",
     s3ContentsUrl: "https://kvbgno6xuecq2fufxsrua37iju0mbcsi.lambda-url.us-east-1.on.aws/",
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSf7qbg4jrs62ny3dmR4svEPLSFW5upQIi4Vt21loylZFcrSkQ/viewform",
-    ticketLink: "https://www.eventbrite.com/e/battle-royale-boston-2024-tickets-713930103157",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSchFagYH-aEg7iftmWnWSihAV_bmq_IwuX3ktXemf11jTBqtA/viewform?usp=sf_link",
+    vipTicketLink: "https://square.link/u/Cye5VdAv",
+    generalTicketLink: "https://square.link/u/jZFcJhps",
     donateLink: "https://square.link/u/QPk7wiDX",
     bucket: "battleroyaleboston", //s3 bucket (Mostly for storing sponsor photos)
     sponsorsPrefix: "sponsors",
@@ -27,7 +28,7 @@ export default new Vuex.Store({
     registrationEnd: "29 February 2025",
     entryFeePaid: "1 March 2025",
     musicDeadLine: "23 March 2025",
-    charityBenefactor: "The Veteran's Appreciation and Support Foundation",
+    charityBenefactor: "Shriners Hospital Transportation Fund",
 
   },
   getters: {
