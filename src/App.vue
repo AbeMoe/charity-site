@@ -27,9 +27,6 @@
         </v-col>
         <v-spacer/>
 
-        <v-col cols="2" offset="auto">
-          <ColorButton :url="ticketLink" text="Tickets"> </ColorButton>
-        </v-col>
         <v-col cols="2" class="pr-3">
           <ColorButton :url="donateLink" text="Donate"> </ColorButton>
         </v-col>
@@ -50,9 +47,6 @@
           <v-list v-show="drawer">
             <v-list-item  v-for="button in buttons" :key=button :title="button.text"  :value="button.routePath">
               <ColorButton :url="'#/' + button.routePath" :text="button.text"/>
-            </v-list-item>
-            <v-list-item>
-               <ColorButton :url="ticketLink" text="Tickets"> </ColorButton>
             </v-list-item>
             <v-list-item>
                <ColorButton :url="donateLink" text="Donate"> </ColorButton>
@@ -92,10 +86,10 @@ export default {
     ticketLink: store.state.ticketLink,
     donateLink: store.state.donateLink,
     buttons: [
-      { "text" : "home", "routePath" : "Home"} , 
-      {"text" : "contact", "routePath" : "Contact"}, 
-      {"text" : "register", "routePath" : "Rules"}, 
-      {"text" : "sponsors", "routePath" : "Sponsors"},
+      { "text" : "Tickets", "routePath" : "Home"} , 
+      {"text" : "Contact", "routePath" : "Contact"}, 
+      {"text" : "Register", "routePath" : "Rules"}, 
+      {"text" : "Sponsors", "routePath" : "Sponsors"},
       ],
     drawer: false,
     isNotMobile: false

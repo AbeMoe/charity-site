@@ -22,7 +22,7 @@ export default new Vuex.Store({
     entryFee: "$75",
     prizeAmount: "$1000",
     region: "us-east-1", //AWS region
-    eventDate: "5, April 2024", //Date event takes place
+    eventDate: "5, April 2025", //Date event takes place
     doorsTime: "4:00 PM", //Time doors open
     eventTime: "5:00 PM", //Event start time
     arrivalTime: "3:00 PM",

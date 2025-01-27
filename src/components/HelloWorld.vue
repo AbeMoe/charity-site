@@ -54,7 +54,7 @@
           Get Tickets For this Event 
         </h2>
          <ColorButton :url="generalTicketLink" text="General"></ColorButton>
-         <ColorButton :url="generalTicketLink" text="VIP"></ColorButton>
+         <ColorButton :url="vipTicketLink" text="VIP"></ColorButton>
 
       </v-col>
       <v-spacer></v-spacer>
